@@ -23,7 +23,8 @@
     "golang.go",                              // Go
     "windmilleng.vscode-go-autotest",         // Go Autotest
     "766b.go-outliner",                       // Go Outliner
-    "premparihar.gotestexplorer"              // Go Test Exlorer
+    "premparihar.gotestexplorer",             // Go Test Exlorer
+    "aaron-bond.better-comments"              // Better Comments
 	],
 	"remoteUser": "vscode"
 }
