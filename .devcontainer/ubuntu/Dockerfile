@@ -65,7 +65,7 @@ RUN set -x \
     && chown -R vscode:vscode /home/${USER_NAME}/.vscode-server
 
 # golang install
-RUN curl -fsSL "https://golang.org/dl/go${GO_VERSION}.linux-arm64.tar.gz" | tar -xz -C /usr/local
+RUN curl -fsSL "https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz" | tar -xz -C /usr/local
 
 # PATH set
 ENV GOROOT=/usr/local/go \
