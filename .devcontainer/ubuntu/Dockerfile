@@ -5,6 +5,7 @@ ARG USER_NAME
 ARG GROUP_ID
 ARG GROUP_NAME
 ARG WORK_DIR
+ARG GO_VERSION
 
 # 証明書のDL
 RUN set -x \
@@ -63,10 +64,17 @@ RUN set -x \
     && mkdir -p /home/${USER_NAME}/.vscode-server/extensions \
     && chown -R vscode:vscode /home/${USER_NAME}/.vscode-server
 
-# repositoryの追加とgoのinstall
+# golang install
+RUN curl -fsSL "https://golang.org/dl/go${GO_VERSION}.linux-arm64.tar.gz" | tar -xz -C /usr/local
+
+# PATH set
+ENV GOROOT=/usr/local/go \
+    GOPATH=/home/${USER_NAME}/${WORK_DIR} \
+    PATH=/home/${USER_NAME}/${WORK_DIR}/go/bin:/usr/local/go/bin:${PATH}
+
+USER ${USER_NAME}
+
+# create workingirectory
 RUN set -x \
-    && add-apt-repository ppa:longsleep/golang-backports \
-    && apt-get -y update \
-    && apt-get install -y --no-install-recommends \
-    golang \
-    && apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
+    && mkdir /home/${USER_NAME}/${WORK_DIR}
+WORKDIR /home/${USER_NAME}/${WORK_DIR}
