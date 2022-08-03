@@ -70,7 +70,7 @@ RUN curl -fsSL "https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz" | tar 
 # PATH set
 ENV GOROOT=/usr/local/go \
     GOPATH=/home/${USER_NAME}/${WORK_DIR} \
-    PATH=/home/${USER_NAME}/${WORK_DIR}/go/bin:/usr/local/go/bin:${PATH}
+    PATH=/home/${USER_NAME}/${WORK_DIR}/bin:/usr/local/go/bin:${PATH}
 
 USER ${USER_NAME}
 
