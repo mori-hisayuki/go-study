@@ -68,9 +68,11 @@ RUN set -x \
 RUN curl -fsSL "https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz" | tar -xz -C /usr/local
 
 # PATH set
+# GOROOT: Goのインストール先
+# GOPATH: Goコマンド実行時のファイルを配置する場所
 ENV GOROOT=/usr/local/go \
-    GOPATH=/home/${USER_NAME}/${WORK_DIR} \
-    PATH=/home/${USER_NAME}/${WORK_DIR}/bin:/usr/local/go/bin:${PATH}
+    GOPATH=/home/${USER_NAME}/go \
+    PATH=/home/${USER_NAME}/go/bin:/usr/local/go/bin:${PATH}
 
 USER ${USER_NAME}
 

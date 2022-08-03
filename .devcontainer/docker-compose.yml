@@ -13,7 +13,7 @@ services:
         GROUP_ID: 1000
         GROUP_NAME: vscode
         WORK_DIR: develop
-        GO_VERSION: 1.18.4
+        GO_VERSION: 1.19
     env_file: devcontainer.env
     environment:
       - TZ=JST-9
@@ -24,4 +24,5 @@ services:
       # ソースコードとdevcontainerを一緒に管理する場合は明示的にマウント先を指定
       - ..:/home/vscode/develop:cached
       - ~/.ssh:/home/vscode/.ssh
+      - .go:/home/vscode/go
     command: sleep infinity

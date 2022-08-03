@@ -17,7 +17,7 @@
 		"christian-kohler.path-intellisense",     // Path Intellisense
 		"streetsidesoftware.code-spell-checker",  // Code Spell Checker
 		"EditorConfig.EditorConfig",              // EditorConfig for VS Code
-    "ms-azuretools.vscode-docker",            // Docker
+		"ms-azuretools.vscode-docker",            // Docker
 		"rangav.vscode-thunder-client",           // Thunder Client
 		"ritwickdey.liveserver",                  // Live Server
     "golang.go",                              // Go
