@@ -1,29 +1,45 @@
 {
 	"name": "Go on VSCode",
-	"dockerComposeFile": "./docker-compose.yml",
+	"dockerComposeFile": "./compose.yml",
 	"service": "go_sample",
 	// workspaceを明示的に指定
 	"workspaceFolder": "/home/vscode/develop",
+  "customizations": {
+    "vscode": {
+			"settings": {
+				"[go]": {
+	        "editor.formatOnSave": false,
+					"editor.defaultFormatter": "golang.go"
+				}
+			},
+			"extensions": [
+				"vscodevim.vim",                          // Vim
+				"formulahendry.auto-rename-tag",          // Auto Rename Tag
+				"mhutchie.git-graph",                     // Git Graph
+				"pkief.material-icon-theme",              // Material Icon Thema
+		    "eamodio.gitlens",                        // GitLens — Git supercharged
+				"oderwat.indent-rainbow",                 // indent-rainbow
+				"ionutvmi.path-autocomplete",             // Path Autocomplete
+				"christian-kohler.path-intellisense",     // Path Intellisense
+				"streetsidesoftware.code-spell-checker",  // Code Spell Checker
+				"EditorConfig.EditorConfig",              // EditorConfig for VS Code
+		    "ms-azuretools.vscode-docker",            // Docker
+				"rangav.vscode-thunder-client",           // Thunder Client
+				"ritwickdey.liveserver",                  // Live Server
+		    "golang.go",                              // Go
+		    "windmilleng.vscode-go-autotest",         // Go Autotest
+		    "766b.go-outliner",                       // Go Outliner
+		    "premparihar.gotestexplorer"              // Go Test Exlorer
+			]
+		},
+  "features": {
+    // git
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "latest"
+    }
+  },
+	},
 	// remotecontainer内でのextension
-	"extensions": [
-		"vscodevim.vim",                          // Vim
-		"formulahendry.auto-rename-tag",          // Auto Rename Tag
-		"mhutchie.git-graph",                     // Git Graph
-		"pkief.material-icon-theme",              // Material Icon Thema
-		"vector-of-bool.gitflow",                 // gitflow
-    "eamodio.gitlens",                        // GitLens — Git supercharged
-		"oderwat.indent-rainbow",                 // indent-rainbow
-		"ionutvmi.path-autocomplete",             // Path Autocomplete
-		"christian-kohler.path-intellisense",     // Path Intellisense
-		"streetsidesoftware.code-spell-checker",  // Code Spell Checker
-		"EditorConfig.EditorConfig",              // EditorConfig for VS Code
-    "ms-azuretools.vscode-docker",            // Docker
-		"rangav.vscode-thunder-client",           // Thunder Client
-		"ritwickdey.liveserver",                  // Live Server
-    "golang.go",                              // Go
-    "windmilleng.vscode-go-autotest",         // Go Autotest
-    "766b.go-outliner",                       // Go Outliner
-    "premparihar.gotestexplorer"              // Go Test Exlorer
-	],
+
 	"remoteUser": "vscode"
 }

@@ -1,20 +1,20 @@
 version: '3.2'
 services:
   go_sample:
-    container_name: go_sample
+    container_name: $CONTAINER_NAME
     # ホスト名を明示的に指定する
     hostname: localhost
+    # ゾンビプロセス防止
     build:
       context: .
       dockerfile: ./ubuntu/Dockerfile
       args:
         USER_ID: 1000
-        USER_NAME: vscode
+        USER_NAME: $USER_NAME
         GROUP_ID: 1000
-        GROUP_NAME: vscode
-        WORK_DIR: develop
-        GO_VERSION: 1.19
-    env_file: devcontainer.env
+        GROUP_NAME: $USER_NAME
+        WORK_DIR: $WORK_DIR
+        GO_VERSION: 1.22.1
     environment:
       - TZ=JST-9
     ports:
@@ -24,5 +24,6 @@ services:
       # ソースコードとdevcontainerを一緒に管理する場合は明示的にマウント先を指定
       - ..:/home/vscode/develop:cached
       - ~/.ssh:/home/vscode/.ssh
+      - .extensions:$HOME_DIR/.vscode-server/extensions
       - .go:/home/vscode/go
     command: sleep infinity
