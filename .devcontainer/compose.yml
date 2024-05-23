@@ -14,7 +14,7 @@ services:
         GROUP_ID: 1000
         GROUP_NAME: $USER_NAME
         WORK_DIR: $WORK_DIR
-        GO_VERSION: 1.22.1
+        GO_VERSION: 1.22.3
     environment:
       - TZ=JST-9
     ports:

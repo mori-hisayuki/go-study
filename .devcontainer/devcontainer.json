@@ -8,7 +8,7 @@
     "vscode": {
 			"settings": {
 				"[go]": {
-	        "editor.formatOnSave": false,
+          "editor.formatOnSave": false,
 					"editor.defaultFormatter": "golang.go"
 				}
 			},
@@ -25,6 +25,8 @@
 				"EditorConfig.EditorConfig",              // EditorConfig for VS Code
 		    "ms-azuretools.vscode-docker",            // Docker
 				"rangav.vscode-thunder-client",           // Thunder Client
+				"github.copilot",													// Github Copilot
+				"github.vscode-github-actions",						// Github Actions
 				"ritwickdey.liveserver",                  // Live Server
 		    "golang.go",                              // Go
 		    "windmilleng.vscode-go-autotest",         // Go Autotest
