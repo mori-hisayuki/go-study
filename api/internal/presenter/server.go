@@ -5,6 +5,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/mori-hisayuki/go-study/api/internal/presenter/controller/system"
+	"github.com/mori-hisayuki/go-study/api/internal/presenter/controller/user"
 )
 
 const latest = "v1"
@@ -21,11 +22,14 @@ func (s *Server) Run(ctx context.Context) error {
 		v1.GET("/health", systemHandler.Health)
 	}
 
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
+	// ユーザー管理機能
+	{
+		userHandler := user.NewUserHandler()
+		v1.GET("", userHandler.GetUser)
+		v1.GET("/:id", userHandler.GetUserById)
+		v1.POST("", userHandler.EditUser)
+		v1.DELETE("/:id", userHandler.DeleteUser)
+	}
 
 	err := r.Run()
 	if err != nil {
