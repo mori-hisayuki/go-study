@@ -7,6 +7,8 @@
   "customizations": {
     "vscode": {
 			"settings": {
+        // ファイル保存時に改行を末尾に挿入
+        "files.insertFinalNewline": true,
 				"[go]": {
           "editor.formatOnSave": false,
 					"editor.defaultFormatter": "golang.go"
@@ -28,10 +30,11 @@
 				"github.copilot",													// Github Copilot
 				"github.vscode-github-actions",						// Github Actions
 				"ritwickdey.liveserver",                  // Live Server
+        "ms-vscode.makefile-tools",               // Makefile Tools
 		    "golang.go",                              // Go
 		    "windmilleng.vscode-go-autotest",         // Go Autotest
 		    "766b.go-outliner",                       // Go Outliner
-		    "premparihar.gotestexplorer"              // Go Test Exlorer
+		    "premparihar.gotestexplorer"              // Go Test Exloreor
 			]
 		},
   "features": {
