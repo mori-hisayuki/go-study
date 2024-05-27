@@ -31,7 +31,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "type": "string"
+                            "$ref": "#/definitions/system.Response"
                         }
                     }
                 }
@@ -147,6 +147,16 @@ const docTemplate = `{
                             "type": "object"
                         }
                     }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "system.Response": {
+            "type": "object",
+            "properties": {
+                "status.omitempty": {
+                    "type": "string"
                 }
             }
         }

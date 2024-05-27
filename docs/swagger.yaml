@@ -1,3 +1,9 @@
+definitions:
+  system.Response:
+    properties:
+      status.omitempty:
+        type: string
+    type: object
 host: localhost:8080
 info:
   contact: {}
@@ -15,7 +21,7 @@ paths:
         "200":
           description: OK
           schema:
-            type: string
+            $ref: '#/definitions/system.Response'
       summary: 死活監視用
       tags:
       - healthcheck
