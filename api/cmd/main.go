@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 
-	"github.com/mori-hisayuki/go-sutdy/api/internal/presenter"
+	"github.com/mori-hisayuki/go-study/api/internal/presenter"
 )
 
 // @title ユーザー管理サービスAPI
@@ -11,7 +11,7 @@ import (
 // @description ユーザー管理サービスAPIの昨日
 // @host localhost:8080
 func main() {
-	server := presenter.NewUserPresenter()
+	server := presenter.NewServer()
 	if err := server.Run(context.Background()); err != nil {
 		panic(err)
 	}
